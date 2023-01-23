@@ -8,7 +8,7 @@ import LogoutBtn from "../components/LogoutBtn"
 
 
 export default function Navbar({ curr_user }) {
-  console.log("Curr_User", curr_user)
+  // console.log("Curr_User", curr_user)
 
   const [nav, setNav] = useState(false);
   const [cur, setCur] = useState("Home");

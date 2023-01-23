@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const variable = process.env.NEXT_PUBLIC_VAR
-  console.log(variable)
+  // console.log(variable)
   return (
     <div className='bg-black'>
       hello

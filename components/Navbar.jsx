@@ -36,8 +36,8 @@ export default function Navbar() {
     return cookie_json;
   }
 
-  console.log("Curr_User_navbar", cookies);
-  console.log("decoded", decode_cookie(cookies));
+  // console.log("Curr_User_navbar", cookies);
+  // console.log("decoded", decode_cookie(cookies));
 
   const [nav, setNav] = useState(false);
   const [cur, setCur] = useState("Home");

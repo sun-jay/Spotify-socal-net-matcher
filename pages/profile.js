@@ -35,7 +35,7 @@ const Profile = () => {
             for (var user of all_users) {
                 if (user.refresh_token === passed_token) {
                     userServices.deleteUser(user.id)
-                    console.log("DELETED USERS")
+                    // console.log("DELETED USERS")
                     return
                 }
             }

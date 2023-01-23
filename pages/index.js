@@ -44,7 +44,7 @@ const Dashboard = () => {
         var user = users[i]
         var songs = await get_songs(user.refresh_token);
         userServices.updateUser(user.id, { songs: songs })
-        console.log("DB updated")
+        // console.log("DB updated")
 
       }
     };
@@ -80,12 +80,12 @@ const Dashboard = () => {
           }))
         })
       }
-      console.log("get_songs_db:", data)
+      // console.log("get_songs_db:", data)
 
       var arr_of_song_arrs = data.map((user) => (user.songs ? user.songs.map((song) => [song.title, song.artist]) : []))
-      console.log("arr of arrs of songs:", arr_of_song_arrs)
+      // console.log("arr of arrs of songs:", arr_of_song_arrs)
       const counts = countOccurrences(arr_of_song_arrs)
-      console.log("Counts:", counts)
+      // console.log("Counts:", counts)
 
       function findHighest(arr) {
         let highest = { key: null, value: -Infinity };
@@ -109,7 +109,7 @@ const Dashboard = () => {
       //   return highest
       // }
 
-      console.log("Highest", findHighest(counts))
+      // console.log("Highest", findHighest(counts))
 
       setTopSong(findHighest(counts))
     })

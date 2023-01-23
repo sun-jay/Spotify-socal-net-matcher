@@ -3,7 +3,7 @@ import cookie from "cookie"
 
 
 export default function HomePage({ curr_user }) {
-  console.log(curr_user)
+  // console.log(curr_user)
 
   return (
     <>
