@@ -5,7 +5,7 @@ import Link from 'next/link'
 import decode_cookie from '@/lib/decode_cookie'
 import userServices from '@/firebase/userServices'
 
-const profile = () => {
+const Profile = () => {
 
     const [cookies, setCookie, removeCookie] = useCookies(["user"]);
     const [token, setToken] = useState(undefined);
@@ -73,4 +73,4 @@ const profile = () => {
     )
 }
 
-export default profile
+export default Profile

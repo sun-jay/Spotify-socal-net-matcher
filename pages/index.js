@@ -9,7 +9,7 @@ import Card from '@/components/Card';
 import { useCookies } from 'react-cookie';
 import decode_cookie from '@/lib/decode_cookie';
 
-const dashboard = () => {
+const Dashboard = () => {
   const [cookies, setCookie] = useCookies(["user"]);
   const [signedIn, setSignIn] = useState(false);
   const [img_url, setImg_url] = useState(undefined);
@@ -168,4 +168,4 @@ const dashboard = () => {
   )
 }
 
-export default dashboard
+export default Dashboard

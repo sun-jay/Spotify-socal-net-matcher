@@ -5,7 +5,7 @@ import { handleClientScriptLoad } from 'next/script'
 
 
 
-const login = () => {
+const Logout = () => {
     const [cookie, setCookie, removeCookie] = useCookies(["user"])
 
     return (
@@ -17,4 +17,4 @@ const login = () => {
     )
 }
 
-export default login
+export default Logout

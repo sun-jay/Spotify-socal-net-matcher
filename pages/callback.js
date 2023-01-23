@@ -7,7 +7,7 @@ import { useCookies } from 'react-cookie';
 import CryptoJS from "crypto-js";
 
 
-const callback = () => {
+const Callback = () => {
     const [cookies, setCookie] = useCookies(["user"]);
   const [signedIn, setSignIn] = useState(false);
   const [name, setName] = useState(undefined);
@@ -147,4 +147,4 @@ const callback = () => {
     )
 }
 
-export default callback
+export default Callback
