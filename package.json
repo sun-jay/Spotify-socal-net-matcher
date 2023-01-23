@@ -14,10 +14,12 @@
     "crypto-js": "^4.1.1",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.2",
+    "firebase": "^9.16.0",
     "next": "13.1.2",
     "react": "18.2.0",
     "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
     "react-social-icons": "^5.15.0",
     "swr": "^2.0.0"
   },
