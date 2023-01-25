@@ -8,6 +8,8 @@ import { FaArrowCircleDown } from "react-icons/fa";
 import Card from '@/components/Card';
 import { useCookies } from 'react-cookie';
 import decode_cookie from '@/lib/decode_cookie';
+import { SocialIcon } from 'react-social-icons';
+
 
 const Dashboard = () => {
   const [cookies, setCookie] = useCookies(["user"]);
@@ -15,7 +17,7 @@ const Dashboard = () => {
   const [img_url, setImg_url] = useState(undefined);
 
   useEffect(() => {
-    setImg_url(  decode_cookie(cookies).img_url);
+    setImg_url(decode_cookie(cookies).img_url);
   });
   const [top_song, setTopSong] = useState({ key: 'Loading...', value: 'Loading...' });
 
@@ -82,7 +84,7 @@ const Dashboard = () => {
       }
       // console.log("get_songs_db:", data)
 
-      var arr_of_song_arrs = data.map((user) => (user.songs ? user.songs.map((song) => [song.title, song.artist]) : []))
+      var arr_of_song_arrs = data.map((user) => (user.songs ? user.songs.map((song) => [song.title, song.artist, song.url]) : []))
       // console.log("arr of arrs of songs:", arr_of_song_arrs)
       const counts = countOccurrences(arr_of_song_arrs)
       // console.log("Counts:", counts)
@@ -118,16 +120,31 @@ const Dashboard = () => {
 
 
 
-
   return (
     <div>
       <div className='bg_gradient  w-screen h-screen text-white text-xl'>
         <div className='w-screen h-screen flex flex-col justify-evenly p-10'>
 
-          <div className='text-6xl '>
+          <div className='text-6xl  '>
             <span className=''>{`Top Song: `}</span>
-            <span className='font-bold linear-wipe'>
-              {`${top_song?.key?.split(',')[0]} by ${top_song?.key?.split(',')[1]} with ${top_song?.value} plays!`}
+            <span className='font-bold   '>
+
+              <span className='underline'>
+                <div className='flex items-center'>
+
+                  <a target="_blank" href={top_song?.key?.split(',').slice(-1)} >
+                    <span className='linear-wipe mr-6' > {`  ${top_song?.key?.split(',')[0]} by ${top_song?.key?.split(',')[1]} `}</span>
+                  </a>
+                  <a target="_blank" href={top_song?.key?.split(',').slice(-1)} >
+                    <div classname="" >
+                      <img className='w-16 h-16' src="Spotify-Logo-PNG-Photos.png" />
+                    </div>
+                  </a>
+                </div>
+              </span>
+
+              <span>{`with ${top_song?.value} plays!`}</span>
+
             </span>
           </div>
           <div className='text-5xl '>
@@ -136,9 +153,9 @@ const Dashboard = () => {
             <span className='font-bold linear-wipe'>26,256</span>
           </div>
           <div className='text-4xl flex w-1/2 justify-between'>
-            <div>
+            <div className=''>
               <span className=''>{`Today's Top Genre: `}</span>
-              <span className='font-bold linear-wipe'>Rap</span>
+              <span className='font-bold  linear-wipe'>Rap</span>
             </div>
             <FaArrowCircleDown
               className="fade-d fade-m animate-[bounce_2s_ease-in-out_infinite]  text-white/70 select-none z-[2]"
@@ -154,10 +171,10 @@ const Dashboard = () => {
         <div className='w-screen h-screen flex flex-col justify-evenly'>
           <div className='text-8xl ml-10'>Your Top Matches</div>
           <div className='flex items-center justify-evenly 	flex-grow: 0 '>
-            <Card name='You' genre="Rap" artist="Drake" path = {img_url} number = ""></Card>
-            <Card name='Victoria S.' genre="Rap" artist="Drake" path = "girl_pfp Cropped.jpg" number = "1"></Card>
-            <Card name='Molly P.' genre="Rap" artist="Future" path = "pfp Cropped.jpg" number = "2"></Card>
-            <Card name='Akira A.' genre="Rap" artist="Gunna" path = 'guypfp (1).png' number = "3"></Card>
+            <Card name='You' genre="Rap" artist="Drake" path={img_url} number=""></Card>
+            <Card name='Victoria S.' genre="Rap" artist="Drake" path="girl_pfp Cropped.jpg" number="1"></Card>
+            <Card name='Molly P.' genre="Rap" artist="Future" path="pfp Cropped.jpg" number="2"></Card>
+            <Card name='Akira A.' genre="Rap" artist="Gunna" path='guypfp (1).png' number="3"></Card>
 
           </div>
         </div>

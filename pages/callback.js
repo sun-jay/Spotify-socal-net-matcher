@@ -91,14 +91,14 @@ const Callback = () => {
     //gets access and refresh tokens
     getRefreshToken()
         .then((value) => {
-            console.log(value)
+            // console.log(value)
             //checks that it actually sent back tokens
             if (value.refresh_token) {
-                console.log("acess toekan", value.access_token)
+                // console.log("acess toekan", value.access_token)
                 //gets account information given access token
                 const name = getInfo(value.access_token)
                     .then((inf) => {
-
+                        // console.log("ACCOUNT INFO", inf)
                         //at this point I want to store the spoitify user ID and the Refresh token in cookies;
 
                         // data = {id: inf.spotify_id, refresh: value.refresh_token}
@@ -117,7 +117,7 @@ const Callback = () => {
                             for (var user of all_users) {
                                 if (user.email === inf.email) {
                                     userServices.updateUser(user.id, { email: inf.email, name: inf.display_name, refresh_token: value.refresh_token })
-                                    console.log("UPDATED USER RECORD")
+                                    // console.log("UPDATED USER RECORD")
                                     return
                                 }
                             }
@@ -126,7 +126,7 @@ const Callback = () => {
                             return
                         })
                     })
-                console.log("REFRESH_TOKEN:", value.refresh_token ? (value.refresh_token, "Success") : "weird error")
+                // console.log("REFRESH_TOKEN:", value.refresh_token ? (value.refresh_token, "Success") : "weird error")
                 value.refresh_token ? setstatus("Logged In!"):console.log("failed")
             }
         })

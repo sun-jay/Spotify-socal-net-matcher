@@ -10,11 +10,11 @@ const Card = ({ name, genre, artist, path, number }) => {
                 <div className='w-5/12 flex items-center justify-center m-2'>
                     
                     <div className='p-6'>
-                        <SocialIcon bgColor="#FCDCFB" fgColor="#000000" url="https://www.snapchat.com/" />
+                        <SocialIcon bgColor="#1ECF5E" fgColor="#000000" url="https://open.spotify.com/" />
                     </div>
                     <img className={name==="You"?'rounded-full w-24 h-24':'rounded-full '} src={path} ></img>
                     <div className='p-6'>
-                        <SocialIcon bgColor="#FCDCFB" fgColor="#000000" url="https://www.instagram.com/" />
+                        <SocialIcon bgColor="#FCDCFB" fgColor="#CF2393" url="https://www.instagram.com/" />
                     </div>
 
                 </div>
