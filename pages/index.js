@@ -132,10 +132,10 @@ const Dashboard = () => {
               <span className='underline'>
                 <div className='flex items-center'>
 
-                  <a target="_blank" href={top_song?.key?.split(',').slice(-1)} >
+                  <a target="_blank" rel="noreferrer"  href={top_song?.key?.split(',').slice(-1)} >
                     <span className='linear-wipe mr-6' > {`  ${top_song?.key?.split(',')[0]} by ${top_song?.key?.split(',')[1]} `}</span>
                   </a>
-                  <a target="_blank" href={top_song?.key?.split(',').slice(-1)} >
+                  <a target="_blank" rel="noreferrer"  href={top_song?.key?.split(',').slice(-1)} >
                     <div classname="" >
                       <img className='w-16 h-16' src="Spotify-Logo-PNG-Photos.png" />
                     </div>
