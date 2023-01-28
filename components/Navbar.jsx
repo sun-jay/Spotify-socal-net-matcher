@@ -69,7 +69,7 @@ export default function Navbar() {
       <div className="max-w-[1300px] w-full m-auto flex md:justify-between justify-between items-center p-4 text-white">
         <Link className="md:block hidden w-4/12 " href="/">
           <h1 style={{ color: `${textColor}` }} className="text-4xl">
-            Calify.com
+          CalTunes.com
           </h1>
         </Link>
         <ul
@@ -89,6 +89,7 @@ export default function Navbar() {
               </button>
             </Link>
           </li>
+
           {signedIn ? (
             <li className={cur === "Projects" ? "p-4 font-bold	" : "p-4 "}>
               <div
@@ -136,7 +137,7 @@ export default function Navbar() {
           <Link href="/contact">Contact</Link>
         </li> */}
         </ul>
-        <div className="block md:hidden">Calify</div>
+        <div className="block md:hidden">CalTunes</div>
         <div onClick={handleNav} className="block md:hidden z-10">
           {nav ? (
             <AiOutlineClose

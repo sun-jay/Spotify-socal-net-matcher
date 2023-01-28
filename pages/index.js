@@ -122,28 +122,27 @@ const Dashboard = () => {
 
   return (
     <div>
-      <div className='bg_gradient  w-screen h-screen text-white text-xl'>
-        <div className='w-screen h-screen flex flex-col justify-evenly p-10'>
-
+      <div className='bg_gradient flex w-screen h-screen text-white text-xl'>
+        <div className='w-8/12 h-screen flex flex-col justify-evenly p-10'>
           <div className='text-6xl  '>
             <span className=''>{`Top Song: `}</span>
             <span className='font-bold   '>
 
               <span className='underline'>
-                <div className='flex items-center'>
+                {/* <div className='flex flex-col items-center'> */}
 
-                  <a target="_blank" rel="noreferrer"  href={top_song?.key?.split(',').slice(-1)} >
-                    <span className='linear-wipe mr-6' > {`  ${top_song?.key?.split(',')[0]} by ${top_song?.key?.split(',')[1]} `}</span>
-                  </a>
-                  <a target="_blank" rel="noreferrer"  href={top_song?.key?.split(',').slice(-1)} >
-                    <div classname="" >
-                      <img className='w-16 h-16' src="Spotify-Logo-PNG-Photos.png" />
-                    </div>
-                  </a>
-                </div>
+                <a target="_blank" rel="noreferrer" href={top_song?.key?.split(',').slice(-1)} >
+                  <span className='linear-wipe mr-6' > {`${top_song?.key?.split(',')[0]} by ${top_song?.key?.split(',')[1]}`}</span>
+                </a>
+                {/* </div> */}
               </span>
 
               <span>{`with ${top_song?.value} plays!`}</span>
+              <a target="_blank" rel="noreferrer" href={top_song?.key?.split(',').slice(-1)} >
+                <div classname="" >
+                  <img className='w-16 h-16' src="Spotify-Logo-PNG-Photos.png" />
+                </div>
+              </a>
 
             </span>
           </div>
@@ -164,6 +163,12 @@ const Dashboard = () => {
             />
           </div>
 
+        </div>
+        <div className='w-4/12 h-full flex flex-col text-white items-center justify-center pr-36'>
+          <div className='text-center pb-10 text-6xl'>What is CalTunes?</div>
+          <div className='text-center'>
+            CalTunes is a Social Network that connects users who have similar music tastes. When you connect your spoitfy account, CalTunes can see your top songs and artists along with your recently listened to songs. CalTunes uses this infromation in the mathcing tool, which shows you the CalTunes users who you are most likely to connect with over music, sharing their favorites artists, songs, or genres.
+          </div>
         </div>
       </div>
 
